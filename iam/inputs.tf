@@ -1,28 +1,17 @@
-variable "name" {
-  default = "ShaiSampleIAM"
-
+variable "iam_role" {
+  type = any
+  default = {
+    create     = false
+    policy_arn = ""
+  }
 }
 
-variable "assume_role_policy" {
-  type    = any
-  default = {}
-}
-
-variable "policy_attachment" {
-  type    = any
-  default = {}
-}
-
-variable "policy_arn" {
-  default = ""
+variable "iam_user" {
+  type = any
+  default = {
+    create  = false
+    pub_key = ""
+  }
 }
 
 variable "tags" {}
-
-variable "region" {
-  default = "ap-northeast-2"
-}
-
-variable "environment" {
-  default = "dev"
-}
